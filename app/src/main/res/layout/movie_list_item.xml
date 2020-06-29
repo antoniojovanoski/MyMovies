@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--kreirame constraint layout so +id/mainLayout, padding od 4dp i height=wrap_content-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+<!--    kreirame imageView kade sto ke se prikazuva poster od filmot -->
+    <ImageView
+        android:id="@+id/movie_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toTopOf="@+id/favoriteandTitleLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<!--    kreirame linearLayout so horizontalna orientacija kade sto ke imame imageView i desno od nego textView-->
+    <LinearLayout
+        android:id="@+id/favoriteandTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/movie_image_view">
+
+        <!--vo ova imageView prikzuvame dali filmot ni e favorit ili ne-->
+        <ImageView
+            android:id="@+id/favorite_image_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/favourites_full_hdpi" />
+
+<!--        vo ova textView go prikazuvame title na filmot-->
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!--    kreirame linearLayout so horizontalna orientacija kade sto ke imame imageView i desno od nego textView-->
+    <LinearLayout
+        android:id="@+id/ratingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/favoriteandTitleLayout">
+
+<!--        vo rating_image_view setirame slika vo zavisnot od dobieniot vote_average od server-->
+        <ImageView
+            android:id="@+id/rating_image_view"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/rate_02_hdpi" />
+<!--        vo rating textview go ispisuvame dobieniot vote_average od server-->
+        <TextView
+            android:id="@+id/text_view_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!--kreirame linearLayout so horizontalna orientacija kade sto ke imame imageView i desno od nego textView-->
+    <LinearLayout
+        android:id="@+id/watchlistLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ratingLayout">
+
+<!--        vo wathclist postavuvame slika vo zavisnost dali filmot ni e staven vo watchlist ili ne-->
+        <ImageView
+            android:id="@+id/watchlist_image_view"
+            android:src="@drawable/watchlist_add_hdpi"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+<!--        ispisuvame add to watchlist ili remove from watchist-->
+        <TextView
+            android:id="@+id/text_view_watchlist"
+            android:paddingLeft="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
